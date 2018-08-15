@@ -4,15 +4,12 @@ import NewApp from './appnew';
 class App extends Component {
   state = {
     visitors : [
-      {name : 'Fabio', age : 25, job : 'Front End', id: 1}
-    ],
-    jumlah : this.visitors.length-1
+      {name : 'Fabio', age : 25, job : 'Front End'}
+    ]
   }
   handleSubmit = (e) => {
-    console.log(this.jumlah)
-    this.setState ({
-      visitors: [{name: this.nama.value, age: this.age.value, job: this.job.value, id: this.lastArray+1}]
-    });
+    let visitor = this.state.visitors.concat({name: this.nama.value, age: this.age.value, job: this.job.value});
+    this.setState({ visitors: visitor })
   }
   render() {
     return (
